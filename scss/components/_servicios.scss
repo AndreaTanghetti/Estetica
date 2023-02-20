@@ -1,0 +1,85 @@
+.sectionServicios {
+    .serviciosTitulo {
+        font-size: 45px;
+        font-weight: normal;
+        font-style: normal;
+        background: #febbbc;
+        background: -webkit-linear-gradient(to right, #ffdde1, #febbbc);
+        background: linear-gradient(to right, #ffdde1, #febbbc);
+        padding-left: 10%;
+        padding-top: 15px;
+        height: 100px;
+    }
+
+    .buscador {
+        display: block;
+        margin: auto;
+        margin-top: 8px;
+        height: 50px;
+        width: 80%;
+        border-radius: 16px;
+    }
+    .divContenedor{
+display: flex;
+flex-direction: column;
+align-items: center;
+        .divServicios {
+            background-color: white;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            width: 80%;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.45);
+            .imagen {
+                width:300px;
+
+            }
+            div{
+
+                .nombre {
+                    font-weight: 600;
+                    font-size: 36px;
+                    margin: 0 0 15px;
+                    text-align: center;
+    
+                }
+                .descripcion{
+                    font-weight: 300;
+                    line-height: 24px;
+                    margin: 0 0 30px 0;
+                    text-align: center;
+                  
+                }
+                .div1{
+                    display: flex;
+                    flex-direction: row-reverse;
+                    justify-content: space-evenly;
+                    
+                            .precio {
+                            }
+                    
+                            .tiempo {
+                
+                                img {
+                                    background-color: #febbbc;
+                                    border-radius: 80%;
+                                }
+                            }
+                }
+                .botonReserva{ 
+                    display: flex;   
+                    margin: auto;
+                    margin-top: 20px;
+                    color: $color-fondo;
+                    background-color: cadetblue;
+                    padding: 8px;
+                    border-radius: 16px;
+                }
+            }
+    
+
+        }
+    }
+}

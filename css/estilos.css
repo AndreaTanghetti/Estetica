@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  width: 100%;
+  height: 100%; }
+  html body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0%;
+    padding: 0%;
+    background-color: #FCF8F7;
+    font-family: 'Quicksand', sans-serif; }
+
+#header .divNav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #febbbc;
+  width: 100%; }
+  #header .divNav .navbar .menu {
+    display: flex;
+    flex-direction: row; }
+    #header .divNav .navbar .menu li {
+      list-style: none;
+      padding: 8px; }
+      #header .divNav .navbar .menu li a {
+        text-decoration: none;
+        color: #FCF8F7; }
+  #header .divNav .cuenta a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #FCF8F7; }
+    #header .divNav .cuenta a img {
+      height: 40px;
+      width: 40px;
+      background-color: #FCF8F7;
+      padding: 8px;
+      border-radius: 16px; }
+
+#index .hero {
+  background-image: url(../img/holis.png);
+  margin: 2px;
+  background-color: bisque;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "texto . "; }
+  #index .hero .heroTexto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    grid-area: texto;
+    height: 100%; }
+    #index .hero .heroTexto p {
+      line-height: 1.5;
+      margin-bottom: 10px;
+      font-family: serif;
+      font-weight: 600;
+      font-size: x-large;
+      color: #7a7570; }
+      #index .hero .heroTexto p span {
+        color: cadetblue;
+        font-size: xxx-large;
+        font-family: monospace;
+        font-weight: 900;
+        font-style: italic; }
+  #index .hero .heroBoton {
+    color: #FCF8F7;
+    background-color: cadetblue;
+    padding: 8px;
+    border-radius: 16px; }
+
+.sectionServicios .serviciosTitulo {
+  font-size: 45px;
+  font-weight: normal;
+  font-style: normal;
+  background: #febbbc;
+  background: -webkit-linear-gradient(to right, #ffdde1, #febbbc);
+  background: linear-gradient(to right, #ffdde1, #febbbc);
+  padding-left: 10%;
+  padding-top: 15px;
+  height: 100px; }
+
+.sectionServicios .buscador {
+  display: block;
+  margin: auto;
+  margin-top: 8px;
+  height: 50px;
+  width: 80%;
+  border-radius: 16px; }
+
+.sectionServicios .divContenedor {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .sectionServicios .divContenedor .divServicios {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+    width: 80%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.45); }
+    .sectionServicios .divContenedor .divServicios .imagen {
+      width: 300px; }
+    .sectionServicios .divContenedor .divServicios div .nombre {
+      font-weight: 600;
+      font-size: 36px;
+      margin: 0 0 15px;
+      text-align: center; }
+    .sectionServicios .divContenedor .divServicios div .descripcion {
+      font-weight: 300;
+      line-height: 24px;
+      margin: 0 0 30px 0;
+      text-align: center; }
+    .sectionServicios .divContenedor .divServicios div .div1 {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-evenly; }
+      .sectionServicios .divContenedor .divServicios div .div1 .tiempo img {
+        background-color: #febbbc;
+        border-radius: 80%; }
+    .sectionServicios .divContenedor .divServicios div .botonReserva {
+      display: flex;
+      margin: auto;
+      margin-top: 20px;
+      color: #FCF8F7;
+      background-color: cadetblue;
+      padding: 8px;
+      border-radius: 16px; }
+
+#footer {
+  background-color: #febbbc; }
+  #footer p {
+    text-align: center;
+    font-size: medium;
+    margin: 16px; }
+  #footer .contactos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; }
+    #footer .contactos a {
+      width: 30px;
+      height: 30px;
+      margin: 0px 16px 0px 16px;
+      transition: 1s; }
+      #footer .contactos a:hover {
+        transform: scale(1.1); }
+      #footer .contactos a img {
+        width: 30px;
+        height: 30px;
+        display: block; }

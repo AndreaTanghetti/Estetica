@@ -1,0 +1,12 @@
+// PALETA DE COLORES
+$color-principal:#febbbc;
+$color-fondo:#FCF8F7;
+
+
+
+@mixin tamano ($width, $height){
+    width:$width ;
+    height:$height;
+}
+
+

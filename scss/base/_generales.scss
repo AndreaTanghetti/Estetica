@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    @include tamano(100%, 100%);
+
+    body {
+        @include tamano(100%, 100%);
+        display: flex;
+        flex-direction: column;
+        margin: 0%;
+        padding: 0%;
+        background-color: $color-fondo;
+        font-family: 'Quicksand', sans-serif;
+    }
+}
