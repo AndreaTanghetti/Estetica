@@ -1,11 +1,16 @@
 #index {
+    
+    background: rgb(255,221,225);
+    background: linear-gradient(90deg, rgba(255,221,225,1) 27%, rgba(254,187,188,1) 65%);
     .hero {
-        background-image: url(../img/holis.png);
-        margin: 2px;
-        background-color:bisque;
+        background-image: url(../img/hero.png);
+
+
+
         background-size: contain;
         background-repeat: no-repeat;
         background-size: 100% 100%;
+        margin: 2px;
         height: 600px;
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -48,4 +53,3 @@
         }
     }
 }
-

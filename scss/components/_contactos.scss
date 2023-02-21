@@ -1,0 +1,78 @@
+#contenedor {
+    height: 100%;
+    width: 100%;
+
+    .divContenedor {
+        height: 100%;
+
+        .divTexto {
+
+            background: #febbbc;
+            background: -webkit-linear-gradient(to right, #ffdde1, #febbbc);
+            background: linear-gradient(to right, #ffdde1, #febbbc);
+            padding-left: 10%;
+            padding-top: 15px;
+
+            h1 {
+                font-weight: 500;
+            }
+
+            h2 {
+                font-weight: 100;
+            }
+        }
+
+
+        .divGrid {
+            margin-top: 16px;
+            margin-bottom: 16px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 100%;
+            grid-template-areas:
+                "form info";
+
+            .divForm {
+                grid: form;
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: 24px;
+
+
+                    label {
+                        margin-left: 8px;
+                    }
+
+                    input {
+                        height: 30px;
+                        border-radius: 8px 0px 8px 0px;
+                        margin: 8px;
+
+                        &.inputComentario {
+                            height: 100px;
+                        }
+                    }
+
+
+                    .botonForm {
+                        padding: 8px;
+                        border-radius: 8px 0px 8px 0px;
+                        background-color: rgb(221, 131, 149);
+                    }
+                }
+            }
+
+            .info {
+                grid-area: info;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                margin: auto;
+                flex-wrap: wrap;
+            }
+        }
+    }
+}

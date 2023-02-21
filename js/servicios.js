@@ -1,37 +1,7 @@
-/*HEADER */
-const header = document.getElementById("header");
-const divNav = document.createElement("div");
-divNav.className = "divNav";
-divNav.innerHTML = `
-                <div class="logo">
-                <a href="../index.html">
-                    <img src="../img/logo.png" alt="logo">
-                </a>
-                </div>
-                <nav class="navbar">
-                <div class="menuIcono">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <ul class="menu">
-                    <li><a href="./servicios.html">SERVICIOS</a></li>
-                    <li><a href="./turnos.html">TURNOS</a></li>
-                    <li><a href="./contactos.html">CONTACTOS</a></li>
-                </ul>
-                </nav>
-                <div class="cuenta">
-                <a href="./cuenta">
-                    <img src="../img/usuario.png" alt="emoji usuario">Mi Cuenta 
-                </a>`;
-
-header.appendChild(divNav)
-
-/* MAIN */
 const servicio = [
     {
         url: "../img/cejas-hilo.jpg",
-        nombre: "depilacion de cejas con hilo",
+        nombre: "Depilacion de cejas con hilo",
         descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse aut asperiores totam illo magni praesentium ipsum non molestias recusandae labore.",
         precio: 800,
         categoria: "depilacion",
@@ -152,6 +122,4 @@ servicio.forEach(servicio => {
     `;
     divContenedor.appendChild(divServicios);
 })
-
-
 

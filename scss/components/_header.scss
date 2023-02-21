@@ -1,43 +1,33 @@
 #header {
-    .divNav {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        background-color: $color-principal;
-        width: 100%;
-        .navbar {
-            .menu {
-                display: flex;
-                flex-direction: row;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $color-principal;
+    width: 100%;
+    .navBar {
+        .navToggle {
+            color: white;
+            background: none;
+            border: none;
+            font-size: 30px;
+            padding: 0 20px;
+            /* line-height: 60px; */
+            cursor: pointer;
+            display: none;
+        }
 
-                li {
-                    list-style: none;
-                    padding: 8px;
+        .navMenu {
+            display: flex;
+            flex-direction: row;
 
-                    a {
-                        text-decoration: none;
-                        color: $color-fondo;
-                    }
+            .navItem {
+                list-style: none;
+                padding: 8px;
+
+                .navLink {
+                    text-decoration: none;
+                    color: $color-fondo;
                 }
             }
         }
-
-        .cuenta {
-            a {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-decoration: none;
-                color: $color-fondo;
-
-                img {
-                    height: 40px;
-                    width: 40px;
-                    background-color: $color-fondo;
-                    padding: 8px;
-                    border-radius: 16px;
-                }
-            }
-        }
-    }
-}
+    }}
