@@ -240,3 +240,37 @@ html {
       border-bottom: solid 1px; }
       #header .navBar .navMenu .navItem .navLink {
         color: #6b6764; } }
+
+@media screen and (max-width: 768px) {
+  #contenedor {
+    height: auto; }
+    #contenedor .divContenedor .divGrid {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: auto auto;
+      grid-template-areas: "form " "info"; }
+      #contenedor .divContenedor .divGrid .divForm {
+        margin: auto;
+        width: 80%; }
+      #contenedor .divContenedor .divGrid .info {
+        align-content: center;
+        width: 80%;
+        margin-top: 10%; }
+        #contenedor .divContenedor .divGrid .info img {
+          width: 35px; }
+  .sectionServicios .divContenedor .divServicios {
+    flex-direction: column; }
+    .sectionServicios .divContenedor .divServicios .imagen {
+      width: 150px; }
+    .sectionServicios .divContenedor .divServicios div .nombre {
+      font-size: 30px; }
+    .sectionServicios .divContenedor .divServicios div .descripcion {
+      font-size: small; }
+    .sectionServicios .divContenedor .divServicios div .botonReserva {
+      margin-bottom: 8px; } }
+
+@media screen and (max-width: 576px) {
+  #header .logo a img {
+    width: 80%; }
+  #header .navBar #boton {
+    margin-top: 0; } }

@@ -9,15 +9,15 @@ divContenedor.innerHTML = `
                         </div>
                         <div class="divGrid">
                         <div class="divForm">
-                        <form >
-                            <label>Ingrese su nombre</label>
-                            <input type="text">
+                        <form id="form">
+                            <label >Ingrese su nombre</label>
+                            <input id= "nombre" type="text">
 
                             <label for=""> Numero de contacto</label>
-                            <input type="number">
+                            <input id="tlf" type="number">
 
                             <label for="">Consulta</label>
-                            <input class="inputComentario"type="text">
+                            <input id="comentario" class="inputComentario"type="text">
                             <button class="botonForm">Enviar</button>
                             </form>
                         </div>
@@ -36,3 +36,28 @@ divContenedor.innerHTML = `
                         `;
 contenedor.appendChild(divContenedor)
 
+class Consulta {
+    constructor(nombre, tlf, comentario){
+this.nombre=nombre;
+this.tlf=tlf;
+this.comentario=comentario;
+    }
+}
+
+
+const form = document.getElementById("form")
+
+
+const arrayConsulta =[]
+
+
+form.onsubmit = (e) =>{
+    e.preventDefault();
+    const nombre = document.getElementById ("nombre")
+    const tlf = document.getElementById ("tlf")
+    const comentario = document.getElementById ("comentario")
+    const consulta = new Consulta (nombre.value, tlf.value, comentario.value)
+    arrayConsulta.push(consulta)
+    console.log(arrayConsulta);
+    form.reset();
+}

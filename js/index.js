@@ -22,7 +22,6 @@ index.appendChild(section);
 
 const heroBoton = document.getElementById("heroBoton");
 
-heroBoton.addEventListener("click", function () {
-    window.location.href = "./pages/contactos.html"
-        ;
-});
+heroBoton.onclick=() =>{
+    window.location.href ="./pages/contactos.html"
+}

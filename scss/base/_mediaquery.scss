@@ -4,6 +4,7 @@
             .navToggle {
                 display: block;
                 margin-top: 16px;
+
                 &:focus:not(:focus-visible) {
                     outline: none;
                 }
@@ -13,7 +14,7 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                margin:auto;
+                margin: auto;
                 height: auto;
                 padding: 20px 0;
                 width: 100%;
@@ -21,16 +22,18 @@
                 position: fixed;
                 right: 100%;
                 transition: left 0.3s;
+
                 &.navMenu_visible {
-                    right
-                    : 0;
-                    background: rgb(255,221,221);
-                    background: linear-gradient(90deg, rgba(255,221,221,0.7960434173669468) 27%, rgba(254,187,188,1) 65%);                }
+                    right: 0;
+                    background: rgb(255, 221, 221);
+                    background: linear-gradient(90deg, rgba(255, 221, 221, 0.7960434173669468) 27%, rgba(254, 187, 188, 1) 65%);
+                }
 
                 .navItem {
                     line-height: 70px;
                     border-bottom: solid 1px;
-                    .navLink{
+
+                    .navLink {
                         color: #6b6764;
                     }
 
@@ -38,4 +41,74 @@
             }
         }
     }
+}
+
+
+@media screen and (max-width:768px){
+    #contenedor{
+        height: auto;
+        .divContenedor{
+            .divGrid{
+                display: grid;
+                grid-template-columns: 100%;
+                grid-template-rows: auto auto;
+                grid-template-areas:
+                    "form "
+                    "info";
+                    .divForm{
+                        margin: auto;
+                        width: 80%;
+                    }
+                    .info{
+                        align-content: center;
+                        width: 80%;
+                        margin-top: 10%;
+                            img{
+                                width: 35px;
+                        }
+                        
+                    }
+            }
+            
+        }
     }
+    .sectionServicios{
+        .divContenedor{
+            .divServicios{
+                flex-direction: column;
+                .imagen{
+                    width: 150px;
+                }
+                div{
+                    .nombre{
+                        font-size: 30px;
+                    }
+                    .descripcion{
+                        font-size: small;
+                    }
+                    .botonReserva{
+                        margin-bottom: 8px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:576px){
+#header{
+    // flex-direction: column;
+    .logo{
+        a{
+            img{
+                width: 80%;
+            }
+        }
+    }
+    .navBar{
+        #boton{
+            margin-top: 0;
+        }
+    }
+}
+}
+

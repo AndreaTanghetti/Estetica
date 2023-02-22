@@ -1,6 +1,6 @@
 const botonMenu = document.getElementById("boton")
 const listaMenu = document.getElementById("lista")
-botonMenu.addEventListener('click', () => {
+  botonMenu.onclick= () => {
   listaMenu.classList.toggle("navMenu_visible");
 
   if (listaMenu.classList.contains("navMenu_visible")) {
@@ -8,4 +8,4 @@ botonMenu.addEventListener('click', () => {
   } else {
     botonMenu.setAttribute("aria-label", "abrir menu");
   }
-}, { passive: true });
+}, { passive: true };
