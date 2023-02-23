@@ -25,11 +25,11 @@ divContenedor.innerHTML = `
 
                         <div>
                         <img src="../img/icons8-marcador-50.png" alt="icono pin ubicacion">
-                        <p>Direccion <br> Av. 24 de Septiembre 400 <br> San Miguel de Tucumán, Tucumán</p>
+                        <p><span>Direccion</span> <br> Av. 24 de Septiembre 400 <br> San Miguel de Tucumán, Tucumán</p>
                     </div>
                     <div>
                         <img src="../img/icons8-reloj-cuadrado-50.png" alt="icono reloj">
-                        <p>Horario <br> Lunes a Sabado <br> Desde 14:00 a 20:00 <br> Domingo cerrado </p>
+                        <p><span>Horarios</span> <br> Lunes a Sabado <br> Desde 14:00 a 20:00 <br> Domingo cerrado </p>
                     </div>
                         </div>
                         </div>

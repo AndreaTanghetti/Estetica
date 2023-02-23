@@ -99,7 +99,8 @@ html {
   margin-top: 8px;
   height: 50px;
   width: 80%;
-  border-radius: 16px; }
+  border-radius: 16px;
+  padding-left: 16px; }
 
 .sectionServicios .divContenedor {
   display: flex;
@@ -114,8 +115,6 @@ html {
     margin: 30px;
     width: 80%;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.45); }
-    .sectionServicios .divContenedor .divServicios .imagen {
-      width: 300px; }
     .sectionServicios .divContenedor .divServicios div .nombre {
       font-weight: 600;
       font-size: 36px;
@@ -130,15 +129,12 @@ html {
       display: flex;
       flex-direction: row-reverse;
       justify-content: space-evenly; }
-      .sectionServicios .divContenedor .divServicios div .div1 .tiempo img {
-        background-color: #febbbc;
-        border-radius: 80%; }
     .sectionServicios .divContenedor .divServicios div .botonReserva {
       display: flex;
       margin: auto;
       margin-top: 20px;
-      color: #FCF8F7;
-      background-color: cadetblue;
+      color: black;
+      background-color: #febbbc;
       padding: 8px;
       border-radius: 16px; }
 
@@ -165,7 +161,9 @@ html {
       grid-template-rows: 100%;
       grid-template-areas: "form info"; }
       #contenedor .divContenedor .divGrid .divForm {
-        grid: form; }
+        grid: form;
+        width: 80%;
+        margin: auto; }
         #contenedor .divContenedor .divGrid .divForm form {
           display: flex;
           flex-direction: column;
@@ -173,15 +171,18 @@ html {
           #contenedor .divContenedor .divGrid .divForm form label {
             margin-left: 8px; }
           #contenedor .divContenedor .divGrid .divForm form input {
-            height: 30px;
-            border-radius: 8px 0px 8px 0px;
-            margin: 8px; }
+            height: 45px;
+            border-radius: 8px;
+            margin: 8px;
+            padding: 8px; }
             #contenedor .divContenedor .divGrid .divForm form input.inputComentario {
               height: 100px; }
           #contenedor .divContenedor .divGrid .divForm form .botonForm {
             padding: 8px;
-            border-radius: 8px 0px 8px 0px;
-            background-color: #dd8395; }
+            border-radius: 8px;
+            background-color: #dd8395;
+            width: 97%;
+            margin-left: 6px; }
       #contenedor .divContenedor .divGrid .info {
         grid-area: info;
         display: flex;
@@ -190,9 +191,16 @@ html {
         justify-content: center;
         margin: auto;
         flex-wrap: wrap; }
+        #contenedor .divContenedor .divGrid .info div {
+          margin-bottom: 16px; }
+          #contenedor .divContenedor .divGrid .info div p span {
+            font-weight: 600;
+            font-size: medium;
+            margin-bottom: 2px; }
 
 #footer {
-  background-color: #febbbc; }
+  background-color: #febbbc;
+  margin-top: auto; }
   #footer p {
     text-align: center;
     font-size: medium;
