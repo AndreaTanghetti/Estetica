@@ -22,8 +22,12 @@
                 position: fixed;
                 right: 100%;
                 transition: left 0.3s;
+                margin-top: 16px;
+
 
                 &.navMenu_visible {
+                    z-index: 1;
+                    position: absolute;
                     right: 0;
                     background: rgb(255, 221, 221);
                     background: linear-gradient(90deg, rgba(255, 221, 221, 0.7960434173669468) 27%, rgba(254, 187, 188, 1) 65%);

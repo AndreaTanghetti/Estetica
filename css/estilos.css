@@ -328,8 +328,11 @@ html {
     overflow-y: auto;
     position: fixed;
     right: 100%;
-    transition: left 0.3s; }
+    transition: left 0.3s;
+    margin-top: 16px; }
     #header .navBar .navMenu.navMenu_visible {
+      z-index: 1;
+      position: absolute;
       right: 0;
       background: #ffdddd;
       background: linear-gradient(90deg, rgba(255, 221, 221, 0.796043) 27%, #febbbc 65%); }
