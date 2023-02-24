@@ -44,71 +44,91 @@
 }
 
 
-@media screen and (max-width:768px){
-    #contenedor{
+@media screen and (max-width:768px) {
+    #contenedor {
         height: auto;
-        .divContenedor{
-            .divGrid{
+
+        .divContenedor {
+            .divGrid {
                 display: grid;
                 grid-template-columns: 100%;
                 grid-template-rows: auto auto;
                 grid-template-areas:
                     "form "
                     "info";
-                    .divForm{
-                        margin: auto;
-                        width: 80%;
+
+                .divForm {
+                    margin: auto;
+                    width: 80%;
+                }
+
+                .info {
+                    align-content: center;
+                    width: 80%;
+                    margin-top: 10%;
+
+                    img {
+                        width: 35px;
                     }
-                    .info{
-                        align-content: center;
-                        width: 80%;
-                        margin-top: 10%;
-                            img{
-                                width: 35px;
-                        }
-                        
-                    }
+
+                }
             }
-            
+
         }
     }
-    .sectionServicios{
-        .divContenedor{
-            .divServicios{
+
+    .sectionServicios {
+        .divContenedor {
+            .divServicios {
                 flex-direction: column;
-                .imagen{
+
+                .imagen {
                     width: 150px;
                 }
-                div{
-                    .nombre{
+
+                div {
+                    .nombre {
                         font-size: 30px;
                     }
-                    .descripcion{
+
+                    .descripcion {
                         font-size: small;
                     }
-                    .botonReserva{
+
+                    .botonReserva {
                         margin-bottom: 8px;
                     }
                 }
             }
         }
     }
+
+    .contenedorTodo {
+        .divFormularios {
+            display: grid;
+            grid-template-columns:100%;
+            grid-template-rows:1fr 1fr;
+            grid-template-areas:
+                "crear "
+                "iniciar";
+        }
+    }
 }
-@media screen and (max-width:576px){
-#header{
-    // flex-direction: column;
-    .logo{
-        a{
-            img{
-                width: 80%;
+
+@media screen and (max-width:576px) {
+    #header {
+        .logo {
+            a {
+                img {
+                    width: 80%;
+                }
+            }
+        }
+
+        .navBar {
+            #boton {
+                margin-top: 0;
             }
         }
     }
-    .navBar{
-        #boton{
-            margin-top: 0;
-        }
-    }
 }
-}
-

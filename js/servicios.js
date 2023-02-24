@@ -141,7 +141,6 @@ servicio.forEach(servicio => {
 // BUSQUEDA
 
 const buscador = document.getElementById("buscador");
-// buscador.addEventListener("input", buscarServicios);
 buscador.oninput = buscarServicios;
 
 

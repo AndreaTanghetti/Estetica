@@ -25,3 +25,4 @@ const heroBoton = document.getElementById("heroBoton");
 heroBoton.onclick=() =>{
     window.location.href ="./pages/contactos.html"
 }
+
