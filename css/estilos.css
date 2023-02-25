@@ -38,7 +38,10 @@ html {
       padding: 8px; }
       #header .navBar .navMenu .navItem .navLink {
         text-decoration: none;
-        color: #FCF8F7; }
+        color: #FCF8F7;
+        transition: 0.6s; }
+        #header .navBar .navMenu .navItem .navLink:hover {
+          color: #2e2d2d; }
 
 #index {
   background: #ffdde1;
@@ -95,7 +98,8 @@ html {
 .sectionServicios .buscador {
   display: block;
   margin: auto;
-  margin-top: 8px;
+  margin-top: 32px;
+  margin-bottom: 8px;
   height: 50px;
   width: 80%;
   border-radius: 16px;
@@ -135,7 +139,14 @@ html {
       color: black;
       background-color: #febbbc;
       padding: 8px;
-      border-radius: 16px; }
+      border-radius: 16px;
+      border: none;
+      width: 40%;
+      display: flex;
+      align-items: center;
+      flex-direction: column; }
+      .sectionServicios .divContenedor .divServicios div .botonReserva:hover {
+        background-color: #ffdde1; }
 
 #contenedor {
   height: 100%;
@@ -179,7 +190,8 @@ html {
           #contenedor .divContenedor .divGrid .divForm form .botonForm {
             padding: 8px;
             border-radius: 8px;
-            background-color: #dd8395;
+            border: none;
+            background-color: #febbbc;
             width: 97%;
             margin-left: 6px; }
       #contenedor .divContenedor .divGrid .info {
@@ -256,6 +268,7 @@ html {
       -webkit-backdrop-filter: blur(4.3px);
       border: 1px solid rgba(241, 232, 232, 0.6);
       width: 80%;
+      height: 90%;
       padding: 80px 20px;
       border-radius: 20px;
       opacity: 1;
@@ -277,16 +290,16 @@ html {
       .contenedorTodo .divFormularios .formIniciarSesion button {
         padding: 10px 40px;
         margin-top: 40px;
-        border: none;
         font-size: 14px;
         font-weight: 600;
-        color: white;
         display: block;
         max-width: 200px;
         margin-left: auto;
         margin-right: auto;
-        background-color: black;
-        border-radius: 16px; }
+        border-radius: 16px;
+        background-color: transparent;
+        border: solid;
+        color: black; }
 
 #footer {
   background-color: #febbbc;

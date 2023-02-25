@@ -26,6 +26,10 @@
                 .navLink {
                     text-decoration: none;
                     color: $color-fondo;
+                    transition: 0.6s;
+                    &:hover{
+                        color: rgb(46, 45, 45);
+                    }
                 }
             }
         }

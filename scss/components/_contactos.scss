@@ -62,9 +62,11 @@
                     .botonForm {
                         padding: 8px;
                         border-radius: 8px;
-                        background-color: rgb(221, 131, 149);
+                        border: none;
+                        background-color: #febbbc;
                         width: 97%;
                         margin-left: 6px;
+
                     }
                 }
             }
@@ -77,10 +79,12 @@
                 justify-content: center;
                 margin: auto;
                 flex-wrap: wrap;
-                div{
-                        margin-bottom: 16px;
-                    p{
-                        span{
+
+                div {
+                    margin-bottom: 16px;
+
+                    p {
+                        span {
                             font-weight: 600;
                             font-size: medium;
                             margin-bottom: 2px;

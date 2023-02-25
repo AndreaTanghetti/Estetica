@@ -15,7 +15,7 @@ contenedorTodo.innerHTML = `
                             <h2>Iniciar Sesión</h2>
                             <input id="inputUsuario" type="text" placeholder="Usuario">
                             <input id="inputContrasena" type="password" placeholder="Contraseña">
-                            <button id="botonIniciarSesion">Entrar</button>
+                            <button id="botonIniciarSesion">Ingresar</button>
                             </form>
                             </div>
                             `;
