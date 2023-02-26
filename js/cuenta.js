@@ -44,11 +44,20 @@ formCrearCuenta.onsubmit = (e) => {
     const inputUsuarioRegistro = document.getElementById("inputUsuarioRegistro");
     const inputContrasenaRegistro = document.getElementById("inputContrasenaRegistro");
     const cuenta = new Cuenta(inputNombre.value, inputCorreoRegistro.value, inputUsuarioRegistro.value, inputContrasenaRegistro.value)
-    cuentaCreada.push(cuenta)
     formCrearCuenta.reset();
 
-    console.log(cuentaCreada);
+
+    const cuentaJson = JSON.stringify(cuenta)
+    localStorage.setItem("Cuentas", cuentaJson)
+    
+    const cuentaJsonRecuperar = localStorage.getItem("Cuentas")
+    const cuentaRecuperada = JSON.parse(cuentaJsonRecuperar)
+
+    cuentaCreada.push(cuentaRecuperada)
 }
+
+
+
 
 const botonRegistrarse = document.getElementById("botonRegistrarse");
 
@@ -62,31 +71,36 @@ const formIniciarSesion = document.getElementById("formIniciarSesion");
 const botonIniciarSesion = document.getElementById("botonIniciarSesion")
 let intentosRestantes = 3;
 
-formIniciarSesion.onsubmit = (e) => {
-    e.preventDefault();
+botonIniciarSesion.onclick = () => {
     const inputUsuario = document.getElementById("inputUsuario");
     const inputContrasena = document.getElementById("inputContrasena");
 
-    const cuentaValida = cuentaCreada.find(cuenta => cuenta.usuario === inputUsuario.value && cuenta.contrasena === inputContrasena.value);
+    const cuentaValida = cuentaCreada.find(cuentaRecuperada => cuentaRecuperada.usuario === inputUsuario.value && cuentaRecuperada.contrasena === inputContrasena.value);
 
-    botonIniciarSesion.onclick = () => {
-        if (cuentaValida) {
+    if (cuentaValida) {
+        formIniciarSesion.reset();
+        alert("Sesión iniciada con éxito.");
+        window.location.href = "./servicios.html"
+
+    } else {
+        intentosRestantes--;
+        if (intentosRestantes > 0) {
+            alert(`Usuario o contraseña inválidos. Quedan ${intentosRestantes} intentos.`);
             formIniciarSesion.reset();
-            alert("Sesión iniciada con éxito.");
-            window.location.href = "./servicios.html"
 
         } else {
-            intentosRestantes--;
-            if (intentosRestantes > 0) {
-                alert(`Usuario o contraseña inválidos. Quedan ${intentosRestantes} intentos.`);
-                formIniciarSesion.reset();
-
-            } else {
-                alert('Se ha superado el límite de intentos. Intente más tarde.');
-                formIniciarSesion.reset();
-            }
+            alert('Se ha superado el límite de intentos. Intente más tarde.');
+            formIniciarSesion.reset();
         }
     }
+};
 
-}
+formIniciarSesion.onsubmit = (e) => {
+    e.preventDefault();
+};
+
+
+
+
+
 

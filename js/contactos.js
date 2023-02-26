@@ -45,19 +45,18 @@ this.comentario=comentario;
 }
 
 
-const form = document.getElementById("form")
-
-
-const arrayConsulta =[]
+const form = document.getElementById("form");
 
 
 form.onsubmit = (e) =>{
     e.preventDefault();
-    const nombre = document.getElementById ("nombre")
-    const tlf = document.getElementById ("tlf")
-    const comentario = document.getElementById ("comentario")
-    const consulta = new Consulta (nombre.value, tlf.value, comentario.value)
-    arrayConsulta.push(consulta)
-    console.log(arrayConsulta);
+    const nombre = document.getElementById ("nombre");
+    const tlf = document.getElementById ("tlf");
+    const comentario = document.getElementById ("comentario");
+    const consulta = new Consulta (nombre.value, tlf.value, comentario.value);
     form.reset();
+
+    const consultaJson = JSON.stringify(consulta);
+
+    localStorage.setItem("consulta", consultaJson);
 }

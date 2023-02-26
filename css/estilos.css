@@ -175,6 +175,11 @@ html {
         width: 80%;
         margin: auto; }
         #contenedor .divContenedor .divGrid .divForm form {
+          background-color: white;
+          margin: 30px;
+          padding: 30px;
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.45);
+          border-radius: 24px;
           display: flex;
           flex-direction: column;
           margin-left: 24px; }
@@ -226,7 +231,7 @@ html {
       height: 90%;
       padding: 80px 20px;
       margin: auto;
-      background: rgba(241, 232, 232, 0.09);
+      background-color: #F2F2F2;
       border-radius: 16px;
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
       backdrop-filter: blur(4.3px);
@@ -244,25 +249,25 @@ html {
         padding: 10px;
         border: none;
         border-radius: 16px;
-        background: #F2F2F2;
+        background-color: #e4e4e4;
         font-size: 16px; }
       .contenedorTodo .divFormularios .formCrearCuenta button {
         padding: 10px 40px;
         margin-top: 40px;
         border: none;
         font-size: 14px;
-        background-color: black;
+        color: black;
+        background-color: #febbbc;
         border-radius: 16px;
         font-weight: 600;
-        color: white;
         display: block;
         max-width: 200px;
         margin-left: auto;
         margin-right: auto; }
     .contenedorTodo .divFormularios .formIniciarSesion {
       grid-area: iniciar;
-      background: rgba(241, 232, 232, 0.09);
       border-radius: 16px;
+      background-color: #F2F2F2;
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
       backdrop-filter: blur(4.3px);
       -webkit-backdrop-filter: blur(4.3px);
@@ -284,7 +289,7 @@ html {
         padding: 10px;
         border: none;
         border-radius: 16px;
-        background: #F2F2F2;
+        background-color: #e4e4e4;
         font-size: 16px;
         outline: none; }
       .contenedorTodo .divFormularios .formIniciarSesion button {
@@ -298,7 +303,7 @@ html {
         margin-right: auto;
         border-radius: 16px;
         background-color: transparent;
-        border: solid;
+        border: solid  1px #febbbc;
         color: black; }
 
 #footer {
