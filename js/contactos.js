@@ -1,4 +1,4 @@
-const contenedor = document.getElementById("contenedor");
+const contenedorContactos = document.getElementById("contenedor");
 
 const divContenedor = document.createElement("div");
 divContenedor.className = "divContenedor";
@@ -34,15 +34,15 @@ divContenedor.innerHTML = `
                         </div>
                         </div>
                         `;
-contenedor.appendChild(divContenedor)
+contenedorContactos.appendChild(divContenedor);
 
 class Consulta {
     constructor(nombre, tlf, comentario){
 this.nombre=nombre;
 this.tlf=tlf;
 this.comentario=comentario;
-    }
-}
+    };
+};
 
 
 const form = document.getElementById("form");
@@ -59,4 +59,4 @@ form.onsubmit = (e) =>{
     const consultaJson = JSON.stringify(consulta);
 
     localStorage.setItem("consulta", consultaJson);
-}
+};

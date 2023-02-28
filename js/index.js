@@ -1,4 +1,3 @@
-
 /* HERO */
 const index = document.getElementById("index");
 const section = document.createElement("section");
@@ -24,5 +23,5 @@ const heroBoton = document.getElementById("heroBoton");
 
 heroBoton.onclick=() =>{
     window.location.href ="./pages/contactos.html"
-}
+};
 

@@ -5,16 +5,23 @@ contenedorTodo.innerHTML = `
                             <div class="divFormularios">  
                             <form id="formCrearCuenta" class="formCrearCuenta">
                             <h2>Regístrarse</h2>
-                            <input id="inputNombre" type="text" placeholder="Nombre completo">
-                            <input id="inputCorreoRegistro" type="email" placeholder="Correo">
-                            <input id="inputUsuarioRegistro" type="text" placeholder="Usuario">
-                            <input id="inputContrasenaRegistro" type="password" placeholder="Contraseña">
+                            <label for="inputNombre">Nombre completo</label>
+                            <input id="inputNombre" type="text" >
+                            <label for="inputCorreoRegistro">Correo</label>
+                            <input id="inputCorreoRegistro" type="email" >
+                            <label for="inputUsuarioRegistro">Usuario</label>
+                            <input id="inputUsuarioRegistro" type="text" >
+                            <label for="inputContrasenaRegistro">Contraseña</label>
+                            <input id="inputContrasenaRegistro" type="password">
                             <button id="botonRegistrarse">Regístrarse</button>
                             </form>
+
                             <form id="formIniciarSesion" class="formIniciarSesion">
                             <h2>Iniciar Sesión</h2>
-                            <input id="inputUsuario" type="text" placeholder="Usuario">
-                            <input id="inputContrasena" type="password" placeholder="Contraseña">
+                            <label for="inputUsuario">Usuario</label>
+                            <input id="inputUsuario" type="text" >
+                            <label for="inputContrasena">Contraseña</label>
+                            <input id="inputContrasena" type="password" >
                             <button id="botonIniciarSesion">Ingresar</button>
                             </form>
                             </div>
@@ -32,10 +39,10 @@ class Cuenta {
         this.correo = correo;
         this.usuario = usuario;
         this.contrasena = contrasena;
-    }
-}
+    };
+};
 
-const cuentaCreada = []
+const cuentaCreada = [];
 
 formCrearCuenta.onsubmit = (e) => {
     e.preventDefault();
@@ -43,18 +50,19 @@ formCrearCuenta.onsubmit = (e) => {
     const inputCorreoRegistro = document.getElementById("inputCorreoRegistro");
     const inputUsuarioRegistro = document.getElementById("inputUsuarioRegistro");
     const inputContrasenaRegistro = document.getElementById("inputContrasenaRegistro");
-    const cuenta = new Cuenta(inputNombre.value, inputCorreoRegistro.value, inputUsuarioRegistro.value, inputContrasenaRegistro.value)
+    const cuenta = new Cuenta(inputNombre.value, inputCorreoRegistro.value, inputUsuarioRegistro.value, inputContrasenaRegistro.value);
     formCrearCuenta.reset();
 
 
-    const cuentaJson = JSON.stringify(cuenta)
-    localStorage.setItem("Cuentas", cuentaJson)
+    const cuentaJson = JSON.stringify(cuenta);
+    localStorage.setItem("Cuentas", cuentaJson);
     
-    const cuentaJsonRecuperar = localStorage.getItem("Cuentas")
-    const cuentaRecuperada = JSON.parse(cuentaJsonRecuperar)
+    const cuentaJsonRecuperar = localStorage.getItem("Cuentas");
+    const cuentaRecuperada = JSON.parse(cuentaJsonRecuperar);
 
-    cuentaCreada.push(cuentaRecuperada)
-}
+    cuentaCreada.push(cuentaRecuperada);
+    console.log(cuentaCreada);
+};
 
 
 
@@ -62,13 +70,13 @@ formCrearCuenta.onsubmit = (e) => {
 const botonRegistrarse = document.getElementById("botonRegistrarse");
 
 botonRegistrarse.onclick = () => {
-    alert("Su cuenta fue creada con exito, por favor inicie sesion.")
+    alert("Su cuenta fue creada con exito, por favor inicie sesion.");
 }
 
 // incio de sesion con verificacion 
 
 const formIniciarSesion = document.getElementById("formIniciarSesion");
-const botonIniciarSesion = document.getElementById("botonIniciarSesion")
+const botonIniciarSesion = document.getElementById("botonIniciarSesion");
 let intentosRestantes = 3;
 
 botonIniciarSesion.onclick = () => {

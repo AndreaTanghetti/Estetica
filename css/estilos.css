@@ -42,6 +42,8 @@ html {
         transition: 0.6s; }
         #header .navBar .navMenu .navItem .navLink:hover {
           color: #2e2d2d; }
+  #header a {
+    color: white; }
 
 #index {
   background: #ffdde1;
@@ -217,9 +219,7 @@ html {
 .contenedorTodo {
   width: 100%;
   height: 100%;
-  margin: auto;
-  background: #ffdde1;
-  background: linear-gradient(90deg, #ffdde1 27%, #febbbc 65%); }
+  margin: auto; }
   .contenedorTodo .divFormularios {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -233,7 +233,7 @@ html {
       margin: auto;
       background-color: #F2F2F2;
       border-radius: 16px;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.45);
       backdrop-filter: blur(4.3px);
       -webkit-backdrop-filter: blur(4.3px);
       border: 1px solid rgba(241, 232, 232, 0.6);
@@ -243,9 +243,12 @@ html {
         text-align: center;
         margin-bottom: 20px;
         color: black; }
+      .contenedorTodo .divFormularios .formCrearCuenta label {
+        margin-left: 8px; }
       .contenedorTodo .divFormularios .formCrearCuenta input {
         width: 100%;
-        margin-top: 20px;
+        margin-top: 8px;
+        margin-bottom: 8px;
         padding: 10px;
         border: none;
         border-radius: 16px;
@@ -268,7 +271,7 @@ html {
       grid-area: iniciar;
       border-radius: 16px;
       background-color: #F2F2F2;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.45);
       backdrop-filter: blur(4.3px);
       -webkit-backdrop-filter: blur(4.3px);
       border: 1px solid rgba(241, 232, 232, 0.6);
@@ -283,9 +286,12 @@ html {
         text-align: center;
         margin-bottom: 20px;
         color: black; }
+      .contenedorTodo .divFormularios .formIniciarSesion label {
+        margin-left: 8px; }
       .contenedorTodo .divFormularios .formIniciarSesion input {
         width: 100%;
-        margin-top: 20px;
+        margin-top: 8px;
+        margin-bottom: 8px;
         padding: 10px;
         border: none;
         border-radius: 16px;
@@ -303,8 +309,52 @@ html {
         margin-right: auto;
         border-radius: 16px;
         background-color: transparent;
-        border: solid  1px #febbbc;
+        border: solid 1px #febbbc;
         color: black; }
+
+#contenedorReserva .sectionReservas .turnosH1 {
+  font-size: 45px;
+  font-weight: normal;
+  font-style: normal;
+  background: #febbbc;
+  background: -webkit-linear-gradient(to right, #ffdde1, #febbbc);
+  background: linear-gradient(to right, #ffdde1, #febbbc);
+  padding-left: 10%;
+  padding-top: 15px;
+  height: 100px; }
+
+#contenedorReserva .sectionReservas .divContReservas {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  #contenedorReserva .sectionReservas .divContReservas .divReservas {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    margin: 30px;
+    width: 80%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.45); }
+    #contenedorReserva .sectionReservas .divContReservas .divReservas img {
+      width: 10%; }
+    #contenedorReserva .sectionReservas .divContReservas .divReservas div {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      #contenedorReserva .sectionReservas .divContReservas .divReservas div .div1 {
+        display: flex; }
+        #contenedorReserva .sectionReservas .divContReservas .divReservas div .div1 p {
+          margin: 16px;
+          text-align: center;
+          line-height: 30px; }
+      #contenedorReserva .sectionReservas .divContReservas .divReservas div .botones {
+        display: inline-block;
+        margin: auto; }
+        #contenedorReserva .sectionReservas .divContReservas .divReservas div .botones button {
+          border: none;
+          border-radius: 16px;
+          color: black;
+          background-color: #febbbc;
+          padding: 8px; }
 
 #footer {
   background-color: #febbbc;
