@@ -29,8 +29,10 @@ const finalizar = () => {
     finalizar.innerHTML = `
                         <div>
                         <p id="total">El total a abonar es $   </p>
+                        <div class="botonesFinalizar">
                         <button id="eliminarTodo">Eliminar todo</button>
                         <button id="finalizar">Finalizar reserva</button>
+                        </div>
                         </div>
                         `;
     divContReservas.appendChild(finalizar);
@@ -125,19 +127,17 @@ const sumarAReserva = (id) => {
 // fin funciones
 
 // --------
+// reservas "carrito"
 const mostrarReservas = () => {
     reservarTurnos.forEach(reserva => {
         const divReservas = document.createElement("div");
         divReservas.className = "divReservas";
         divReservas.innerHTML = `
                                 <img class="imagen" src="${reserva.url}" alt="${reserva.nombre}">
-                                <div>
-                                    <div class="div1">
                                         <p> Servicio <br> ${reserva.nombre} </p>
                                         <p class="precio"> Precio <br>$${reserva.precio}</p>
                                         <p class="tiempo"> Tiempo <br> ${reserva.tiempo} min </p>
                                         <p> Turnos <br>${reserva.cantidad} </p>
-                                    </div>
                                     <div class="botones">
                                         <button id="botonEliminar${reserva.id}">
                                             eliminar
@@ -148,8 +148,7 @@ const mostrarReservas = () => {
                                         <button id="botonMas${reserva.id}">
                                             +
                                         </button>
-
-                                    </div>
+                                        </div>
                                 </div>
                                 `;
         divContReservas.appendChild(divReservas);

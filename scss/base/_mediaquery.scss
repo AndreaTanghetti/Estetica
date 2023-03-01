@@ -117,6 +117,24 @@
                 "iniciar";
         }
     }
+#contenedorReserva{
+    .sectionReservas{
+        .divContReservas{
+            .divReservas{
+                display: flex;
+                flex-direction: column;
+                width: auto;
+                img{
+                    width: 150px;
+                }
+                p{
+                    margin: 8px;
+                }
+            }
+        }
+    }
+}
+
 }
 
 @media screen and (max-width:576px) {

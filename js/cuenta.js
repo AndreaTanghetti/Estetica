@@ -44,34 +44,28 @@ class Cuenta {
 
 const cuentaCreada = [];
 
+
 formCrearCuenta.onsubmit = (e) => {
     e.preventDefault();
     const inputNombre = document.getElementById("inputNombre");
     const inputCorreoRegistro = document.getElementById("inputCorreoRegistro");
     const inputUsuarioRegistro = document.getElementById("inputUsuarioRegistro");
     const inputContrasenaRegistro = document.getElementById("inputContrasenaRegistro");
-    const cuenta = new Cuenta(inputNombre.value, inputCorreoRegistro.value, inputUsuarioRegistro.value, inputContrasenaRegistro.value);
-    formCrearCuenta.reset();
 
 
-    const cuentaJson = JSON.stringify(cuenta);
-    localStorage.setItem("Cuentas", cuentaJson);
-    
-    const cuentaJsonRecuperar = localStorage.getItem("Cuentas");
-    const cuentaRecuperada = JSON.parse(cuentaJsonRecuperar);
-
-    cuentaCreada.push(cuentaRecuperada);
-    console.log(cuentaCreada);
+    if (inputNombre.value === "" || inputCorreoRegistro.value === "" || inputUsuarioRegistro.value === "" || inputContrasenaRegistro.value === "") {
+        alert("Por favor llene todos los campos")
+    } else {
+        const cuenta = new Cuenta(inputNombre.value, inputCorreoRegistro.value, inputUsuarioRegistro.value, inputContrasenaRegistro.value);
+        cuentaCreada.push(cuenta)
+        alert("Su cuenta fue creada con exito, por favor inicie sesion.");
+        const cuentaJson = JSON.stringify(cuentaCreada);
+        localStorage.setItem("Cuentas", cuentaJson);
+        formCrearCuenta.reset();
+    }
 };
 
 
-
-
-const botonRegistrarse = document.getElementById("botonRegistrarse");
-
-botonRegistrarse.onclick = () => {
-    alert("Su cuenta fue creada con exito, por favor inicie sesion.");
-}
 
 // incio de sesion con verificacion 
 
