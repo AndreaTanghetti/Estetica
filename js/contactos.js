@@ -53,10 +53,38 @@ form.onsubmit = (e) =>{
     const nombre = document.getElementById ("nombre");
     const tlf = document.getElementById ("tlf");
     const comentario = document.getElementById ("comentario");
+
+if (nombre.value === "" || tlf.value === "" || comentario.value === "" ){
+    Toastify({
+        text: "Por favor complete todos los campos",
+        duration: 3000,
+        gravity:"top",
+        position: "right",
+        destination: "./reservas.html",
+        style :{
+            background: "red" ,
+            color : "black"
+        }
+        }).showToast();
+} else{
+    Toastify({
+        text: "Consulta enviada",
+        duration: 3000,
+        gravity:"top",
+        position: "right",
+        destination: "./reservas.html",
+        style :{
+            background: "linear-gradient(to right, #ffdde1, #febbbc)" ,
+            color : "black"
+        }
+        }).showToast();
     const consulta = new Consulta (nombre.value, tlf.value, comentario.value);
     form.reset();
 
     const consultaJson = JSON.stringify(consulta);
 
     localStorage.setItem("consulta", consultaJson);
+}
+
 };
+

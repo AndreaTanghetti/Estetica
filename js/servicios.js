@@ -121,12 +121,13 @@ sectionServicios.innerHTML = `
                             <h1 class="serviciosTitulo">Servicios</h1>
                             <input class="buscador" id="buscador" type="text" placeholder="¿Que estas buscando?">
                             <div class="divContenedor" id="divContenedor"></div>
+                            <div class=" p-2">
                             `
 mainServicios.appendChild(sectionServicios);
 
 // TARJETAS
 
-const divContenedor = document.getElementById("divContenedor")
+const divContenedor = document.getElementById("divContenedor");
 
 const mostrarServicios = () =>{
 
@@ -203,9 +204,9 @@ function mostrarServiciosFiltrados(servicios) {
         const botonReservaBusqueda = document.getElementById (`boton${servicio.id}`);
         botonReservaBusqueda.onclick = ()=> {
             reservarTurno(servicio.id);
-        };
+        }
 
-    });
+    })
 };
 
 
@@ -213,12 +214,27 @@ function mostrarServiciosFiltrados(servicios) {
 const reservarTurno = (id) => {
     let reservas = JSON.parse(localStorage.getItem("reservas")) || [];
     const turnoYaSolicitado = reservas.find(servicio => servicio.id === id);
+
+
     if(turnoYaSolicitado){
         turnoYaSolicitado.cantidad++;
     } else {
         const solicitarTurno = servicio.find(servicio => servicio.id === id);
         reservas.push(solicitarTurno);
-    }
+    };
+
+    Toastify({
+        text: "Servicio agregado",
+        duration: 3000,
+        gravity:"top",
+        position: "right",
+        destination: "./reservas.html",
+        style :{
+            background: "linear-gradient(to right, #ffdde1, #febbbc)" ,
+            color : "black"
+        }
+        }).showToast();
+
     const reservasJson = JSON.stringify(reservas);
     localStorage.setItem("reservas", reservasJson);
 };

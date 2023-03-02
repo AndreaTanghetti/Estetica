@@ -4,11 +4,9 @@ const recuperarReservas = localStorage.getItem("reservas");
 
 
 let reservarTurnos = [];
-if (recuperarReservas) {
-    reservarTurnos = JSON.parse(recuperarReservas);
-} else {
-    reservarTurnos = [];
-};
+
+recuperarReservas ? reservarTurnos = JSON.parse(recuperarReservas) : reservarTurnos = [];
+
 //-----------
 const sectionReservas = document.getElementById("sectionReservas");
 sectionReservas.className = "sectionReservas";
@@ -40,17 +38,46 @@ const finalizar = () => {
     // eliminar todo
     const eliminarTodo = document.getElementById("eliminarTodo");
     eliminarTodo.onclick = () => {
-        localStorage.clear("reservas");
-        divContReservas.innerHTML = "";
+        eliminarTotal()
     };
     // finalizar reserva
     const botonfinalizar = document.getElementById("finalizar");
     botonfinalizar.onclick = () => {
-        alert("Dejanos un wpp con la fecha y hora en la que te gustaria agendar el turno y te enviaremos el link de pago");
-        window.open("https://wa.me/qr/JGAHWZ2KNFIDP1", "_blank");
-        localStorage.clear("reservas");
-        divContReservas.innerHTML = "";
+        finReserva()
     };
+};
+
+const eliminarTotal = () =>{
+            swal.fire({
+            icon :"question",
+            title: "Se eliminar todas las reservas",
+            text: "¿Quieres eliminar todo?",
+            confirmButtonText: "Si",
+            showCancelButton: true,
+            cancelButtonText: "No",
+            confirmButtonColor: "#febbbc",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                localStorage.clear("reservas");
+                divContReservas.innerHTML = "";
+            }
+        })
+};
+
+const finReserva = ()=>{
+    swal.fire({
+        text: "Dejanos un wpp con la fecha y hora en la que te gustaria agendar el turno y te enviaremos el link de pago, por el monto de la seña. Muchas gracias!",
+        confirmButtonText: "Aceptar",
+        showCancelButton: true,
+        cancelButtonText: "cancelar",
+        confirmButtonColor: "#febbbc",
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.open("https://wa.me/qr/JGAHWZ2KNFIDP1", "_blank")
+            localStorage.clear("reservas");
+            divContReservas.innerHTML = "";
+        }
+    })
 };
 
 // total a pagar
@@ -62,7 +89,7 @@ const totalFinal = () => {
 
     const pTotal = document.getElementById('total');
     pTotal.innerHTML = `El total a abonar es $${totalAPagar}`;
-}
+};
 
 // botones
 
@@ -82,13 +109,14 @@ const botones = (reserva) => {
     botonMas.onclick = () => {
         sumarAReserva(reserva.id);
     }
-}
+};
 
 
 // eliminar el total de la cantidad de un servicio
 const eliminarDeReserva = (id) => {
     const servicio = reservarTurnos.find(reserva => reserva.id === id);
     const indice = reservarTurnos.indexOf(servicio);
+
 
     if (indice !== -1) {
         reservarTurnos.splice(indice, 1);
@@ -104,11 +132,9 @@ const eliminarDeReserva = (id) => {
 
 const restarDeReserva = (id) => {
     const reserva = reservarTurnos.find(reserva => reserva.id === id);
-    if (reserva.cantidad > 1) {
-        reserva.cantidad--;
-    } else {
-        eliminarDeReserva(reserva.id);
-    }
+
+    reserva.cantidad > 1 ? reserva.cantidad-- : eliminarDeReserva(reserva.id);
+
     divContReservas.innerHTML = "";
     mostrarReservas();
 };
@@ -160,7 +186,7 @@ const mostrarReservas = () => {
     if (reservarTurnos.length > 0) {
         finalizar();
     }
-} //cierre
+} ;
 mostrarReservas();
 
 

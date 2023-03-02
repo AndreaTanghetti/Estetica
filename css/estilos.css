@@ -440,7 +440,7 @@ html {
       grid-template-areas: "form " "info"; }
       #contenedor .divContenedor .divGrid .divForm {
         margin: auto;
-        width: 80%; }
+        width: 100%; }
       #contenedor .divContenedor .divGrid .info {
         align-content: center;
         width: 80%;
@@ -465,7 +465,7 @@ html {
   #contenedorReserva .sectionReservas .divContReservas .divReservas {
     display: flex;
     flex-direction: column;
-    width: auto; }
+    width: 80%; }
     #contenedorReserva .sectionReservas .divContReservas .divReservas img {
       width: 150px; }
     #contenedorReserva .sectionReservas .divContReservas .divReservas p {

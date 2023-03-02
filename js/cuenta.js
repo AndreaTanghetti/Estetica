@@ -39,11 +39,12 @@ class Cuenta {
         this.correo = correo;
         this.usuario = usuario;
         this.contrasena = contrasena;
-    };
+    }
 };
 
 const cuentaCreada = [];
 
+const botonRegistrarse = document.getElementById("botonRegistrarse ")
 
 formCrearCuenta.onsubmit = (e) => {
     e.preventDefault();
@@ -54,15 +55,26 @@ formCrearCuenta.onsubmit = (e) => {
 
 
     if (inputNombre.value === "" || inputCorreoRegistro.value === "" || inputUsuarioRegistro.value === "" || inputContrasenaRegistro.value === "") {
-        alert("Por favor llene todos los campos")
+        swal.fire({
+            icon: "warning",
+            text: "Por favor llene todos los campos",
+            confirmButtonText: "Aceptar",
+            confirmButtonColor: "#febbbc",
+        })
     } else {
         const cuenta = new Cuenta(inputNombre.value, inputCorreoRegistro.value, inputUsuarioRegistro.value, inputContrasenaRegistro.value);
         cuentaCreada.push(cuenta)
-        alert("Su cuenta fue creada con exito, por favor inicie sesion.");
+        swal.fire({
+            icon: "success",
+            text: "Su cuenta fue creada con exito, por favor inicie sesion.",
+            confirmButtonText: "Aceptar",
+            confirmButtonColor: "#febbbc",
+        })
         const cuentaJson = JSON.stringify(cuentaCreada);
         localStorage.setItem("Cuentas", cuentaJson);
         formCrearCuenta.reset();
     }
+
 };
 
 
@@ -81,17 +93,25 @@ botonIniciarSesion.onclick = () => {
 
     if (cuentaValida) {
         formIniciarSesion.reset();
-        alert("Sesión iniciada con éxito.");
-        window.location.href = "./servicios.html"
-
+        ingresoCorrecto();
     } else {
         intentosRestantes--;
         if (intentosRestantes > 0) {
-            alert(`Usuario o contraseña inválidos. Quedan ${intentosRestantes} intentos.`);
+            swal.fire({
+                icon: "warning",
+                text: `Usuario o contraseña inválidos. Quedan ${intentosRestantes} intentos.`,
+                confirmButtonText: "Aceptar",
+                confirmButtonColor: "#febbbc",
+            })
             formIniciarSesion.reset();
 
         } else {
-            alert('Se ha superado el límite de intentos. Intente más tarde.');
+            swal.fire({
+                icon: "error",
+                text: 'Se ha superado el límite de intentos. Intente más tarde.',
+                confirmButtonText: "Aceptar",
+                confirmButtonColor: "#febbbc",
+            })
             formIniciarSesion.reset();
         }
     }
@@ -101,8 +121,18 @@ formIniciarSesion.onsubmit = (e) => {
     e.preventDefault();
 };
 
-
-
+const ingresoCorrecto = ()=>{
+    swal.fire({
+        icon: "success",
+        text: "Sesión iniciada con éxito.",
+        confirmButtonText: "Aceptar",
+        confirmButtonColor: "#febbbc",
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = "./servicios.html"
+        }
+    })
+};
 
 
 
