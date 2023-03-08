@@ -52,4 +52,39 @@
             border-radius: 16px;
         }
     }
+    .sectionEquipo{
+        background-color: $color-fondo;
+
+        h1{
+            border-top: solid 2px white;
+            font-size: 45px;
+            font-weight: normal;
+            font-style: normal;
+            background: #febbbc;
+            background: -webkit-linear-gradient(to right, #ffdde1, #febbbc);
+            background: linear-gradient(to right, #ffdde1, #febbbc);
+            padding-top: 15px;
+            padding-bottom: 15px;
+            text-align: center;
+        }
+        .contEquipo{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+            .divEquipo{
+                background-color: white;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin: 30px;
+                width: 300px;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.45);
+                text-align: center;
+            }
+        }
+
+    }
 }

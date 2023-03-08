@@ -210,7 +210,7 @@ function mostrarServiciosFiltrados(servicios) {
 };
 
 
-
+//mando al "carrito"
 const reservarTurno = (id) => {
     let reservas = JSON.parse(localStorage.getItem("reservas")) || [];
     const turnoYaSolicitado = reservas.find(servicio => servicio.id === id);

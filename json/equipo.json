@@ -1,0 +1,27 @@
+[
+    {
+        "url":"./img/persona.jpeg",
+        "nombre":"Constaza",
+        "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, optio!"
+    },
+    {
+        "url":"../img/persona1.jpeg",
+        "nombre":"Paula",
+        "descripcion":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, optio!"
+    },
+    {
+        "url":"../img/persona2.jpeg",
+        "nombre":"Sofia",
+        "descripcion":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, optio!"
+    },
+    {
+        "url":"../img/persona3.jpeg",
+        "nombre":"Nerina",
+        "descripcion":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, optio!"
+    },
+    {
+        "url":"../img/persona4.jpeg",
+        "nombre":"Dalma",
+        "descripcion":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, optio!"
+    }
+]

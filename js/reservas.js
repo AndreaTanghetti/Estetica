@@ -50,7 +50,7 @@ const finalizar = () => {
 const eliminarTotal = () =>{
             swal.fire({
             icon :"question",
-            title: "Se eliminar todas las reservas",
+            title: "Se eliminaran todas las reservas",
             text: "¿Quieres eliminar todo?",
             confirmButtonText: "Si",
             showCancelButton: true,
