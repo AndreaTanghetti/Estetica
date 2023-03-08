@@ -36,7 +36,7 @@ index.appendChild(sectionEquipo)
 
 
 const contEquipo = document.getElementById("contEquipo")
-const ruta = "../json/equipo.json"
+const ruta = "./json/equipo.json"
 
 fetch(ruta)
     .then(respuesta => respuesta.json())
