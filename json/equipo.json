@@ -5,22 +5,22 @@
         "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, optio!"
     },
     {
-        "url":"../img/persona1.jpeg",
+        "url":"./img/persona1.jpeg",
         "nombre":"Paula",
         "descripcion":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, optio!"
     },
     {
-        "url":"../img/persona2.jpeg",
+        "url":"./img/persona2.jpeg",
         "nombre":"Sofia",
         "descripcion":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, optio!"
     },
     {
-        "url":"../img/persona3.jpeg",
+        "url":"./img/persona3.jpeg",
         "nombre":"Nerina",
         "descripcion":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, optio!"
     },
     {
-        "url":"../img/persona4.jpeg",
+        "url":"./img/persona4.jpeg",
         "nombre":"Dalma",
         "descripcion":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, optio!"
     }
