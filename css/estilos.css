@@ -46,7 +46,8 @@ html {
     color: white; }
   #header .iconoReserva {
     text-decoration: none;
-    display: flex; }
+    display: flex;
+    margin-right: 12px; }
     #header .iconoReserva img {
       width: 50px; }
 
