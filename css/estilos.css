@@ -44,6 +44,11 @@ html {
           color: #2e2d2d; }
   #header a {
     color: white; }
+  #header .iconoReserva {
+    text-decoration: none;
+    display: flex; }
+    #header .iconoReserva img {
+      width: 50px; }
 
 #index {
   background: #ffdde1;

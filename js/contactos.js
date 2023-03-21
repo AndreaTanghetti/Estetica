@@ -88,3 +88,15 @@ if (nombre.value === "" || tlf.value === "" || comentario.value === "" ){
 
 };
 
+//CONTADOR DE SERVICIOS AGREGADOS EN "CARRITO" 
+const contador = document.getElementById("contador");
+
+function actualizarContador() {
+    const reservas = JSON.parse(localStorage.getItem("reservas")) || [];
+    const totalProductos = reservas.map(reserva => reserva.cantidad).reduce((acumulador, cantidad) => acumulador + cantidad, 0);
+    contador.innerHTML = ""
+    contador.innerHTML = totalProductos;
+}
+
+setInterval(actualizarContador, 2000);
+actualizarContador();

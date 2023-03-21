@@ -47,24 +47,24 @@ const finalizar = () => {
     };
 };
 
-const eliminarTotal = () =>{
-            swal.fire({
-            icon :"question",
-            title: "Se eliminaran todas las reservas",
-            text: "¿Quieres eliminar todo?",
-            confirmButtonText: "Si",
-            showCancelButton: true,
-            cancelButtonText: "No",
-            confirmButtonColor: "#febbbc",
-        }).then((result) => {
-            if (result.isConfirmed) {
-                localStorage.clear("reservas");
-                divContReservas.innerHTML = "";
-            }
-        })
+const eliminarTotal = () => {
+    swal.fire({
+        icon: "question",
+        title: "Se eliminaran todas las reservas",
+        text: "¿Quieres eliminar todo?",
+        confirmButtonText: "Si",
+        showCancelButton: true,
+        cancelButtonText: "No",
+        confirmButtonColor: "#febbbc",
+    }).then((result) => {
+        if (result.isConfirmed) {
+            localStorage.clear("reservas");
+            divContReservas.innerHTML = "";
+        }
+    })
 };
 
-const finReserva = ()=>{
+const finReserva = () => {
     swal.fire({
         text: "Dejanos un wpp con la fecha y hora en la que te gustaria agendar el turno y te enviaremos el link de pago, por el monto de la seña. Muchas gracias!",
         confirmButtonText: "Aceptar",
@@ -134,8 +134,9 @@ const restarDeReserva = (id) => {
     const reserva = reservarTurnos.find(reserva => reserva.id === id);
 
     reserva.cantidad > 1 ? reserva.cantidad-- : eliminarDeReserva(reserva.id);
-
+    
     divContReservas.innerHTML = "";
+    localStorage.setItem("reservas", JSON.stringify(reservarTurnos));
     mostrarReservas();
 };
 
@@ -143,8 +144,11 @@ const restarDeReserva = (id) => {
 // sumo de uno 
 const sumarAReserva = (id) => {
     const reserva = reservarTurnos.find(reserva => reserva.id === id);
+
     reserva.cantidad++;
+
     divContReservas.innerHTML = ""
+    localStorage.setItem("reservas", JSON.stringify(reservarTurnos));
     mostrarReservas();
 };
 
@@ -186,7 +190,7 @@ const mostrarReservas = () => {
     if (reservarTurnos.length > 0) {
         finalizar();
     }
-} ;
+};
 mostrarReservas();
 
 

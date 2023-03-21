@@ -8,7 +8,7 @@ const servicio = [
         categoria: "depilacion",
         tiempo: 40,
         id: 1,
-        cantidad:1
+        cantidad: 1
     },
 
     {
@@ -19,7 +19,7 @@ const servicio = [
         categoria: "depilacion",
         tiempo: 20,
         id: 2,
-        cantidad:1
+        cantidad: 1
     },
 
     {
@@ -29,8 +29,8 @@ const servicio = [
         precio: 2000,
         categoria: "uñas",
         tiempo: 60,
-        id:3,
-        cantidad:1
+        id: 3,
+        cantidad: 1
     },
 
     {
@@ -40,8 +40,8 @@ const servicio = [
         precio: 1200,
         categoria: "cejas",
         tiempo: 40,
-        id:4,
-        cantidad:1
+        id: 4,
+        cantidad: 1
     },
 
     {
@@ -51,8 +51,8 @@ const servicio = [
         precio: 700,
         categoria: "cejas",
         tiempo: 20,
-        id:5,
-        cantidad:1
+        id: 5,
+        cantidad: 1
     },
 
     {
@@ -62,8 +62,8 @@ const servicio = [
         precio: 400,
         categoria: "depilacion",
         tiempo: 30,
-        id:6,
-        cantidad:1
+        id: 6,
+        cantidad: 1
     },
 
     {
@@ -73,8 +73,8 @@ const servicio = [
         precio: 1000,
         categoria: "uñas",
         tiempo: 50,
-        id:7,
-        cantidad:1
+        id: 7,
+        cantidad: 1
     },
 
     {
@@ -84,8 +84,8 @@ const servicio = [
         precio: 1300,
         categoria: "uñas",
         tiempo: 60,
-        id:8,
-        cantidad:1
+        id: 8,
+        cantidad: 1
     },
 
     {
@@ -95,8 +95,8 @@ const servicio = [
         precio: 600,
         categoria: "pestañas",
         tiempo: 50,
-        id:9,
-        cantidad:1
+        id: 9,
+        cantidad: 1
     },
 
     {
@@ -106,8 +106,8 @@ const servicio = [
         precio: 600,
         categoria: "pestañas",
         tiempo: 50,
-        id:10,
-        cantidad:1
+        id: 10,
+        cantidad: 1
     },
 ];
 
@@ -129,7 +129,7 @@ mainServicios.appendChild(sectionServicios);
 
 const divContenedor = document.getElementById("divContenedor");
 
-const mostrarServicios = () =>{
+const mostrarServicios = () => {
 
     servicio.forEach(servicio => {
 
@@ -150,9 +150,9 @@ const mostrarServicios = () =>{
                                 </div>
         `;
         divContenedor.appendChild(divServicios);
-    
-        const botonReserva = document.getElementById (`boton${servicio.id}`);
-        botonReserva.onclick = ()=> {
+
+        const botonReserva = document.getElementById(`boton${servicio.id}`);
+        botonReserva.onclick = () => {
             reservarTurno(servicio.id);
         }
 
@@ -201,8 +201,8 @@ function mostrarServiciosFiltrados(servicios) {
         divContenedor.appendChild(divServicios);
 
 
-        const botonReservaBusqueda = document.getElementById (`boton${servicio.id}`);
-        botonReservaBusqueda.onclick = ()=> {
+        const botonReservaBusqueda = document.getElementById(`boton${servicio.id}`);
+        botonReservaBusqueda.onclick = () => {
             reservarTurno(servicio.id);
         }
 
@@ -216,7 +216,7 @@ const reservarTurno = (id) => {
     const turnoYaSolicitado = reservas.find(servicio => servicio.id === id);
 
 
-    if(turnoYaSolicitado){
+    if (turnoYaSolicitado) {
         turnoYaSolicitado.cantidad++;
     } else {
         const solicitarTurno = servicio.find(servicio => servicio.id === id);
@@ -226,17 +226,30 @@ const reservarTurno = (id) => {
     Toastify({
         text: "Servicio agregado",
         duration: 3000,
-        gravity:"top",
+        gravity: "top",
         position: "right",
         destination: "./reservas.html",
-        style :{
-            background: "linear-gradient(to right, #ffdde1, #febbbc)" ,
-            color : "black"
+        style: {
+            background: "linear-gradient(to right, #ffdde1, #febbbc)",
+            color: "black"
         }
-        }).showToast();
+    }).showToast();
 
     const reservasJson = JSON.stringify(reservas);
     localStorage.setItem("reservas", reservasJson);
 };
+
+//CONTADOR DE SERVICIOS AGREGADOS EN "CARRITO" 
+const contador = document.getElementById("contador");
+
+function actualizarContador() {
+    const reservas = JSON.parse(localStorage.getItem("reservas")) || [];
+    const totalProductos = reservas.map(reserva => reserva.cantidad).reduce((acumulador, cantidad) => acumulador + cantidad, 0);
+    contador.innerHTML = ""
+    contador.innerHTML = totalProductos;
+}
+
+setInterval(actualizarContador, 2000);
+actualizarContador();
 
 
