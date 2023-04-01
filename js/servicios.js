@@ -242,6 +242,7 @@ const reservarTurno = (id) => {
 //CONTADOR DE SERVICIOS AGREGADOS EN "CARRITO" 
 const contador = document.getElementById("contador");
 
+
 function actualizarContador() {
     const reservas = JSON.parse(localStorage.getItem("reservas")) || [];
     const totalProductos = reservas.map(reserva => reserva.cantidad).reduce((acumulador, cantidad) => acumulador + cantidad, 0);

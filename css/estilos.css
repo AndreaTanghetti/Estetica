@@ -185,6 +185,79 @@ html {
       .sectionServicios .divContenedor .divServicios div .botonReserva:hover {
         background-color: #ffdde1; }
 
+.contenedorTodo {
+  width: 100%;
+  height: 100%;
+  margin: auto; }
+  .contenedorTodo .divFormularios .formIniciarSesion {
+    border-radius: 16px;
+    background-color: #F2F2F2;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(4.3px);
+    -webkit-backdrop-filter: blur(4.3px);
+    border: 1px solid rgba(241, 232, 232, 0.6);
+    width: 50%;
+    padding: 80px 20px;
+    border-radius: 20px;
+    opacity: 1;
+    margin: auto;
+    margin-top: 16px;
+    margin-bottom: 16px; }
+    .contenedorTodo .divFormularios .formIniciarSesion h2 {
+      font-size: 30px;
+      text-align: center;
+      margin-bottom: 20px;
+      color: black; }
+    .contenedorTodo .divFormularios .formIniciarSesion label {
+      margin-left: 8px; }
+    .contenedorTodo .divFormularios .formIniciarSesion input {
+      width: 100%;
+      margin-top: 8px;
+      margin-bottom: 8px;
+      padding: 10px;
+      border: none;
+      border-radius: 16px;
+      background-color: #e4e4e4;
+      font-size: 16px;
+      outline: none; }
+    .contenedorTodo .divFormularios .formIniciarSesion button {
+      width: 100%;
+      padding: 10px 40px;
+      margin-top: 40px;
+      font-size: 14px;
+      font-weight: 600;
+      display: block;
+      border-radius: 16px;
+      background-color: transparent;
+      border: solid 1px #febbbc;
+      color: black; }
+    .contenedorTodo .divFormularios .formIniciarSesion p {
+      margin-top: 20px;
+      text-align: center; }
+    .contenedorTodo .divFormularios .formIniciarSesion .btnRegistro {
+      background-color: #febbbc; }
+
+.swal2-html-container {
+  border-radius: 40px; }
+  .swal2-html-container .formCrearCuenta {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .swal2-html-container .formCrearCuenta input {
+      width: 80%;
+      margin-top: 8px;
+      margin-bottom: 8px;
+      padding: 10px;
+      border: none;
+      border-radius: 16px;
+      background-color: #e4e4e4;
+      font-size: 16px;
+      outline: none; }
+
+.swal2-actions {
+  display: flex;
+  flex-direction: row-reverse; }
+
 #contenedor {
   height: 100%;
   width: 100%; }
@@ -396,11 +469,8 @@ html {
       font-size: small; }
     .sectionServicios .divContenedor .divServicios div .botonReserva {
       margin-bottom: 8px; }
-  .contenedorTodo .divFormularios {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: "crear " "iniciar"; }
+  .contenedorTodo .divFormularios .formIniciarSesion {
+    width: 90%; }
   #contenedorReserva .sectionReservas .divContReservas .divReservas {
     display: flex;
     flex-direction: column;

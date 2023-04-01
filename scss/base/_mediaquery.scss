@@ -109,31 +109,31 @@
 
     .contenedorTodo {
         .divFormularios {
-            display: grid;
-            grid-template-columns:100%;
-            grid-template-rows:1fr 1fr;
-            grid-template-areas:
-                "crear "
-                "iniciar";
+            .formIniciarSesion{
+                width: 90%;
+            }
         }
     }
-#contenedorReserva{
-    .sectionReservas{
-        .divContReservas{
-            .divReservas{
-                display: flex;
-                flex-direction: column;
-                width: 80%;
-                img{
-                    width: 150px;
-                }
-                p{
-                    margin: 8px;
+
+    #contenedorReserva {
+        .sectionReservas {
+            .divContReservas {
+                .divReservas {
+                    display: flex;
+                    flex-direction: column;
+                    width: 80%;
+
+                    img {
+                        width: 150px;
+                    }
+
+                    p {
+                        margin: 8px;
+                    }
                 }
             }
         }
     }
-}
 
 }
 
