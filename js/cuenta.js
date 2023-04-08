@@ -1,22 +1,71 @@
 const mainCuenta = document.getElementById("mainCuenta");
 const contenedorTodo = document.createElement("div");
-contenedorTodo.className = "contenedorTodo";
-contenedorTodo.innerHTML = `
-                            <div class="divFormularios">  
-                            <form id="formIniciarSesion" class="formIniciarSesion">
-                            <h2>Iniciar Sesión</h2>
-                            <label for="inputUsuario">Usuario</label>
-                            <input id="inputUsuario" type="text" >
-                            <label for="inputContrasena">Contraseña</label>
-                            <input id="inputContrasena" type="password" >
-                            <button id="botonIniciarSesion">Ingresar</button>
-                            <p>¿Todavia no tenes cuenta?</p>
-                            <button id="registro" class="btnRegistro">Registrate</button>
-                            </form>
-                            </div>
-                            `;
-mainCuenta.appendChild(contenedorTodo);
+// verifico si hay una sesion iniciada
+if (localStorage.getItem("sesion activa")) {
+  contenedorTodo.innerHTML = `
+                      <div class="sesionOk">
+                      <h1>Bienvenido</h1>
+                      <div class="botones">
+                      <button id="irAServicios">Ir a servicios</button>
+                      <button id="cerrar">Cerrar Sesion</button>
+                      </div>
+                      </div>
 
+                `
+  mainCuenta.appendChild(contenedorTodo);
+
+const irAServicios = document.getElementById ("irAServicios")
+irAServicios.onclick = () => {
+        window.location.href = "./servicios.html";
+      }
+
+  const cerrarSesion = document.getElementById("cerrar")
+  cerrarSesion.onclick = () => {
+    localStorage.removeItem("sesion activa")
+    mostrarForm();
+  }
+} else {
+  mostrarForm();
+}
+
+// si no la hay, muestro esto
+function mostrarForm() {
+  contenedorTodo.className = "contenedorTodo";
+  contenedorTodo.innerHTML = `
+                              <div class="divFormularios">  
+                              <form id="formIniciarSesion" class="formIniciarSesion">
+                              <h2>Iniciar Sesión</h2>
+                              <label for="inputUsuario">Usuario</label>
+                              <input id="inputUsuario" type="text" >
+                              <label for="inputContrasena">Contraseña</label>
+                              <input id="inputContrasena" type="password" >
+                              <button id="botonIniciarSesion">Ingresar</button>
+                              <p>¿Todavia no tenes cuenta?</p>
+                              <button id="registro" class="btnRegistro">Registrate</button>
+                              </form>
+                              </div>
+                              `;
+  mainCuenta.appendChild(contenedorTodo);
+
+  const botonIniciarSesion = document.getElementById("botonIniciarSesion");
+  botonIniciarSesion.onclick = () => {
+    botonIniciar();
+  }
+  const formIniciarSesion = document.getElementById("formIniciarSesion");
+
+  const registro = document.getElementById("registro");
+  registro.onclick = () => {
+    crearCuenta();
+  };
+
+  formIniciarSesion.onsubmit = (e) => {
+    e.preventDefault();
+    formIniciarSesion.reset();
+  };
+
+}
+
+// constructores de cuenta y de sesion 
 class Cuenta {
   constructor(nombre, correo, usuario, contrasena) {
     this.nombre = nombre;
@@ -26,43 +75,47 @@ class Cuenta {
   }
 };
 
-let cuentasExistente = [];
-
-
-// conecto con html
-const botonIniciarSesion = document.getElementById("botonIniciarSesion");
-const formIniciarSesion = document.getElementById("formIniciarSesion");
-
-const registro = document.getElementById("registro");
-registro.onclick = () => {
-  crearCuenta();
+class SesionOk {
+  constructor(inputUsuario, inputContrasena) {
+    this.inputUsuario = inputUsuario;
+    this.inputContrasena = inputContrasena;
+  };
 };
 
-formIniciarSesion.onsubmit = (e) => {
-  e.preventDefault();
-  formIniciarSesion.reset();
-};
 
 // inicio de sesion
-// valido localStorage
 
 // verifico cuentas
 let intentosRestantes = 3;
-botonIniciarSesion.onclick = () => {
+let cuentasExistente = [];
+
+function botonIniciar() {
+
+// tomo datos del form
   const inputUsuario = document.getElementById("inputUsuario");
   const inputContrasena = document.getElementById("inputContrasena");
+  const sesionValida = new SesionOk(inputUsuario.value, inputContrasena.value)
+
+  // valido con localStorage
   let cuentaRecuperada = JSON.parse(localStorage.getItem("cuentas"));
 
   if (!cuentaRecuperada) {
     cuentaRecuperada = [];
   }
-
-
   const cuentaValida = cuentaRecuperada.find((cuenta) => cuenta.usuario === inputUsuario.value && cuenta.contrasena === inputContrasena.value
   );
 
+  // si es valida guardo en localStorage
+  function sesion() {
+    if (cuentaValida) {
+      const sesionJson = JSON.stringify(sesionValida);
+      localStorage.setItem("sesion activa", sesionJson);
+    }
+  }
+
   if (cuentaValida) {
     formIniciarSesion.reset();
+    sesion();
     ingresoCorrecto();
   } else {
     intentosRestantes--;
@@ -86,6 +139,8 @@ botonIniciarSesion.onclick = () => {
   }
 };
 
+
+
 const ingresoCorrecto = () => {
   swal
     .fire({
@@ -96,8 +151,7 @@ const ingresoCorrecto = () => {
     })
     .then((result) => {
       if (result.isConfirmed) {
-        window.location.href = "./servicios.html";
-      }
+        location.reload();      }
     });
 };
 
@@ -163,8 +217,6 @@ const verificarCampos = (inputNombre, inputCorreoRegistro, inputUsuarioRegistro,
     localStorage.setItem("cuentas", cuentaJson);
   }
 };
-
-
 
 //CONTADOR DE SERVICIOS AGREGADOS EN "CARRITO" 
 const contador = document.getElementById("contador");

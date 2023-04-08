@@ -185,6 +185,47 @@ html {
       .sectionServicios .divContenedor .divServicios div .botonReserva:hover {
         background-color: #ffdde1; }
 
+.sesionOk {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  border-radius: 16px;
+  background-color: #F2F2F2;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4.3px);
+  -webkit-backdrop-filter: blur(4.3px);
+  border: 1px solid rgba(241, 232, 232, 0.6);
+  width: 50%;
+  padding: 80px 20px;
+  border-radius: 20px;
+  opacity: 1;
+  margin: auto;
+  margin-top: 16px;
+  margin-bottom: 16px; }
+  .sesionOk .botones #irAServicios {
+    width: 100%;
+    padding: 10px 40px;
+    margin-top: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    display: block;
+    border-radius: 16px;
+    border: solid 1px #febbbc;
+    color: black;
+    background-color: #febbbc; }
+  .sesionOk .botones #cerrar {
+    width: 100%;
+    padding: 10px 40px;
+    margin-top: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    display: block;
+    border-radius: 16px;
+    border: solid 1px #febbbc;
+    color: black; }
+
 .contenedorTodo {
   width: 100%;
   height: 100%;
@@ -484,4 +525,6 @@ html {
   #header .logo a img {
     width: 80%; }
   #header .navBar #boton {
-    margin-top: 0; } }
+    margin-top: 0; }
+  .sesionOk {
+    width: 90%; } }
